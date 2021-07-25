@@ -28,3 +28,20 @@ Note: The data.zip file used in the notebook has been attached in this repositor
 
 **SqueezeNet** Notebook Outline:
 - Importing the CIFAR-10 dataset, applying transformations and training on the SqueezeNet architecture, imported (pre-trained).
+
+
+## Batch Normalization and Dropout
+
+In this notebook, we will be looking into two popular techniques that are commonly employed in deep neural networks to improve accuracy and avoid overfitting. The first is _Batch Normaliztion_, a method in which inputs in a particular batch to the network are standardized before the forward pass. This is helpful as the training process is stabilized and the load on the network in terms of learning is reduced, leaving the weights with more ability to pick up features and attributes. Thus the training is accelerated and the number of epochs needed to reach the same level of convergence are reduced.
+
+_Dropout_ is another commonly employed trick requiring low compute resources that is used to prevent overfitting on the training data. Overfitting is phenomenon in Deep Learning wherein the model developed fits exactly over its training data when provided with sufficient time to do so. Consequently, it loses its ability to predict on unseen or test data. Training accuracies are high and test accuracies are low. To avoid overfitting, we can use dropout, wherein the outputs of some neurons in a network are randomly set to 0 during training. Since random neurons in a network are dropped randomly during training, it is equivalent to training different networks on the same data. Different networks on the data would overfit differently and the net effect would be reduced overfitting. Another feature of this method is that since neurons are dropped out randomly, each neuron learns to predict the right characteristics on the data. Earlier, errors in the prediction of neurons in lower hidden states could be corrected by those higher in the network but here since the output might vanish, each neuron learns to pick up the right attributes, making the model more robust. We will explore these two methods here.
+
+**Batchnorm_Dropout** Notebook Outline:
+- Importing and visualizing the MNIST dataset.
+- Writing two simple FeedForward Network classes, one with and one without batch normalization.
+- Training these two on the MNIST dataset and periodically plotting the outputs of different layers to study the impact of batchnormalization. Comparing the final loss plots of the two networks as well.
+- Generating toy data to study the effect of dropout.
+- Writing two simple FeedForward Networks, one with and the other without dropout layers.
+- Training the two networks on the toy dataset, and periodically visualizing how the two networks fit on the data.
+- Writing two CNNs, to study the effect of 2D batchnormalization on the MNIST dataset.
+- Training the two networks simulataneously and periodically visualizing the outputs of the two networks and the final loss plots. 
