@@ -45,3 +45,14 @@ _Dropout_ is another commonly employed trick requiring low compute resources tha
 - Training the two networks on the toy dataset, and periodically visualizing how the two networks fit on the data.
 - Writing two CNNs, to study the effect of 2D batchnormalization on the MNIST dataset.
 - Training the two networks simulataneously and periodically visualizing the outputs of the two networks and the final loss plots. 
+
+## Hyperparameter Tuning and MLFlow
+
+The performance of any given neural network depends laregely on what hyperparameters we have decided to use. A ML engineer's primary job is to select the proper hyperparameters for any given model keeping in mind compute resources available and the nature of the data that is being trained on. Improper selection of hyperparamters during training can make it unstable, give low accuracies or in some cases also lead to overfitting. Since there aren't any well defined formulas as such for doing so, iterative methodologies must be applied to arrive at a suitable configuration. Since we're working in colab, it can be tiresome to instantiate different networks for different configurations and run them in different code cells, so it is common practice to use softwares such as MLFLow, which help us to log different metrics during training and save them for further analysis and interpretation. We can also create useful visualizations to compare different networks to see which one fits our model best. To employ MLFlow for our purpose it is important to run colab in a local environment.
+
+**MLFlow** Notebook Outline:
+- Loading and transforming the MNIST data set for training.
+- Creating a simple neural network for classification and defining training and test functions which will help in logging metrics.
+- Training the network with different hyperparameters and logging metrics at intervals.
+- Raw code for implementation of the _Confusion matrix_ visualization for a network.
+- Visualizing some parameters of our model.
